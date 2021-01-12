@@ -1,0 +1,54 @@
+@import '../../public/variables';
+
+div{
+    &.lastNote{
+        border-radius: 0 0 15px 15px;
+    }
+    background: #fff;
+    font-size: calc(0.8rem + 2 * ((100vw - 320px) / 680));
+    line-height: 30px;
+    padding: 15px;
+    display: flex;
+
+    input[type=checkbox]{
+        margin: auto 5px;
+        appearance: none;
+        &:focus{
+            outline: 0;
+        }
+        &::before{
+            content: '';
+            font-size: 1.2rem;
+            padding: 4px;
+            display: inline-block;
+            border: 1.2px solid #C6C6C6;
+            color: #C6C6C6;
+            font-weight: 900;
+            border-radius: 100%;
+            width: 1.2em;
+            height: 1.2em;
+            line-height: 25px;
+            margin: auto 5px;
+            text-align: center;
+            cursor: pointer;
+        }
+        &.isChecked::before{
+            content: '\0221A';
+        }
+    }
+
+    span{
+        line-height: 40px;
+
+        &.isChecked{
+            text-decoration: line-through;
+        }
+        &.date{
+            padding: 0 10px;
+            font-size: 0.6rem;
+            line-height: 42px;
+            opacity: 0.6;
+            margin: auto auto auto 0;
+        }
+    }
+}

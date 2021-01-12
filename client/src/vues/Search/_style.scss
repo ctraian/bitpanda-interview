@@ -1,0 +1,43 @@
+
+@import '../public/variables';
+
+@mixin search{
+    background: #DBDBDB;
+}
+
+form{
+    @include search;
+
+    display: flex;
+    border-radius: 15px;
+    padding: 2px 5px;
+    min-width: 200px;
+    width: 25%;
+    margin: 25% auto auto auto;
+    button{  
+        color: grey;
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+        &:focus{
+            outline: 0;
+        }
+    }
+}
+
+input[type=search]{
+    @include search;
+
+    border: 0;
+    line-height: 1.8rem;
+    font-size: $fontSizeHeader;
+    font-weight: lighter;
+    width: 100%;
+    &::placeholder{
+        color: grey;
+        margin-left: 10px;
+    }
+    &:focus {
+        outline: 0;
+    }
+}
