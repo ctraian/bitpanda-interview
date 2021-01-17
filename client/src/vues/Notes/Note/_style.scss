@@ -1,7 +1,7 @@
 @import '../../public/variables';
 
-div{
-    &.lastNote{
+.note{
+    &--lastNote{
         border-radius: 0 0 15px 15px;
     }
     background: #fff;
@@ -10,7 +10,7 @@ div{
     padding: 15px;
     display: flex;
 
-    input[type=checkbox]{
+    &__checkbox{
         margin: auto 5px;
         appearance: none;
         &:focus{
@@ -20,9 +20,9 @@ div{
             content: '';
             font-size: 1.2rem;
             padding: 4px;
-            display: inline-block;
-            border: 1.2px solid #C6C6C6;
-            color: #C6C6C6;
+            display: block;
+            border: 1.2px solid $notesBorderColor;
+            color: $notesBorderColor;
             font-weight: 900;
             border-radius: 100%;
             width: 1.2em;
@@ -32,23 +32,24 @@ div{
             text-align: center;
             cursor: pointer;
         }
-        &.isChecked::before{
+        &--isChecked::before{
             content: '\0221A';
         }
     }
 
-    span{
+    &__title{
         line-height: 40px;
 
-        &.isChecked{
+        &--isChecked{
             text-decoration: line-through;
         }
-        &.date{
-            padding: 0 10px;
-            font-size: 0.6rem;
-            line-height: 42px;
-            opacity: 0.6;
-            margin: auto auto auto 0;
-        }
+    }
+
+    &__date{
+        padding: 0 10px;
+        font-size: 0.6rem;
+        line-height: 42px;
+        opacity: 0.6;
+        margin: auto auto auto 0;
     }
 }

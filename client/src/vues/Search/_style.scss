@@ -5,7 +5,7 @@
     background: #DBDBDB;
 }
 
-form{
+.search{
     @include search;
 
     display: flex;
@@ -14,7 +14,8 @@ form{
     min-width: 200px;
     width: 25%;
     margin: 25% auto auto auto;
-    button{  
+
+    &__icon{  
         color: grey;
         background: transparent;
         border: 0;
@@ -23,21 +24,21 @@ form{
             outline: 0;
         }
     }
-}
 
-input[type=search]{
-    @include search;
-
-    border: 0;
-    line-height: 1.8rem;
-    font-size: $fontSizeHeader;
-    font-weight: lighter;
-    width: 100%;
-    &::placeholder{
-        color: grey;
-        margin-left: 10px;
-    }
-    &:focus {
-        outline: 0;
+    &__input{
+        @include search;
+    
+        border: 0;
+        line-height: 1.8rem;
+        font-size: $fontSizeHeader;
+        font-weight: lighter;
+        width: 100%;
+        &::placeholder{
+            color: grey;
+            margin-left: 10px;
+        }
+        &:focus {
+            outline: 0;
+        }
     }
 }

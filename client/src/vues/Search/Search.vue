@@ -1,36 +1,38 @@
 <template lang="pug">
-    form(v-on:submit.prevent)
-        button
-            font-awesome-icon(:icon="searchIcon" @click='search')
-        input(type='search' @change='filter' :placeholder='inputText')
+  form.search(@submit.prevent)
+    button.search__icon
+      font-awesome-icon(:icon="faSearch")
+    input.search__input(
+      type='search'
+      placeholder='Search'
+      :value='title'
+      @input='handleSearch'
+    )
 </template>
 
 <script lang="ts">
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import Vue from 'vue';
+import { defineComponent } from '@vue/composition-api';
 
-export default Vue.extend({
+export default defineComponent({
   name: 'Search',
-  props: {
-    search: {
-      type: String,
-    },
-  },
-  data() {
-    return {
-      inputText: 'Search',
-      searchIcon: faSearch,
-      title: this.search,
-    };
-  },
   components: {
     FontAwesomeIcon,
   },
-  methods: {
-    filter() {
-      console.log('I don t know vuejs typescript events');
+  props: {
+    title: {
+      type: String,
+      required: true,
     },
+    handleSearch: {
+      type: Function,
+    },
+  },
+  setup() {
+    return {
+      faSearch,
+    };
   },
 });
 </script>

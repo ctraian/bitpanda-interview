@@ -1,14 +1,19 @@
 <template lang="pug">
-    div(:class='{lastNote}')
-      input(:class='{isChecked}' type='checkbox' @click="isChecked = !isChecked")
-      span(:class='{isChecked}') {{noteTitle}}
-      span.date - {{ new Date().getMinutes()}} minutes
+  div.note(:class="{'note--lastNote': isLast}")
+    input.note__checkbox(
+      name='check input'
+      :class="{'note__checkbox--isChecked': checked}"
+      type='checkbox'
+      @click="checked = !checked"
+    )
+    span.note__title(:class="{'note__title--isChecked': checked}") {{noteTitle}}
+    span.note__date - {{ new Date().getMinutes()}} minutes
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { defineComponent } from '@vue/composition-api';
 
-export default Vue.extend({
+export default defineComponent({
   name: 'Note',
   props: {
     checked: {
@@ -22,13 +27,6 @@ export default Vue.extend({
     isLast: {
       type: Boolean,
     },
-  },
-  data() {
-    return {
-      isChecked: this.checked,
-      title: this.noteTitle,
-      lastNote: this.isLast,
-    };
   },
 });
 </script>
