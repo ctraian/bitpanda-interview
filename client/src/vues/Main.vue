@@ -1,14 +1,14 @@
 <template lang="pug">
-    main
+    main#main
       Notes
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { defineComponent } from '@vue/composition-api';
 
 import Notes from './Notes/Notes.vue';
 
-export default Vue.extend({
+export default defineComponent({
   name: 'Main',
   components: {
     Notes,

@@ -1,14 +1,14 @@
 <template lang="pug">
-    div
-      button.prev(@click='prevPage') <
-      span |
-      button.next(@click='nextPage') >
+    div.pagination
+      button.pagination__btn(class='pagination__btn__prev' @click='prev') <
+      span.pagination__separator |
+      button.pagination__btn(class='pagination__btn__next' @click='next') >
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { defineComponent } from '@vue/composition-api';
 
-export default Vue.extend({
+export default defineComponent({
   name: 'Note',
   props: {
     prev: {
@@ -20,15 +20,9 @@ export default Vue.extend({
       required: true,
     },
   },
-  data() {
-    return {
-      prevPage: this.prev,
-      nextPage: this.next,
-    };
-  },
 });
 </script>
 
-<style lang="sass" scoped>
+<style lang="sass">
 @import 'style';
 </style>

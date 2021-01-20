@@ -1,16 +1,11 @@
-div{
+.pagination{
   display: flex;
   justify-content: flex-end;
   min-width: 200px;
   width: 25%;
   margin: 20px auto;
 
-  span{
-    padding: 0 2px;
-    background: #fff;
-  }
-
-  button{
+  &__btn{
     background: transparent;
     border: 0;
     outline: 0;
@@ -18,16 +13,21 @@ div{
     line-height: 1.2rem;
 
     
-    &.prev{
+    &__prev{
       border: 0 solid transparent;
       border-radius: 50px 0 0 50px;
       background: #fff;
     }
 
-    &.next{
+    &__next{
       border: 0 solid transparent;
       border-radius: 0 50px 50px 0;
       background: #fff;
     }
+  }
+
+  &__separator{
+    padding: 0 2px;
+    background: #fff;
   }
 }

@@ -122,6 +122,6 @@ export default defineComponent({
 });
 </script>
 
-<style lang="sass" scoped>
+<style lang="sass">
 @import 'style';
 </style>
